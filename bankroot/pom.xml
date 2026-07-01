@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.eazybytes</groupId>
+	<artifactId>bankroot</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<name>bankroot</name>
+	<description>Parent aggregator for BankRoot microservices: accounts, cards, loans</description>
+
+	<!--
+	    This is a Maven Multi-Module aggregator POM.
+	    It does NOT extend spring-boot-starter-parent itself — each child module
+	    keeps its own Spring Boot parent (preserving their individual versions).
+	    The <modules> block tells Maven (and IntelliJ) about all child modules.
+	-->
+
+	<modules>
+		<module>../accounts</module>
+		<module>../cards</module>
+		<module>../loans</module>
+	</modules>
+
+	<!--
+	    HOW TO USE IN IntelliJ IDEA:
+	    1. File > Open > select this bankroot folder
+	    2. IntelliJ imports all 3 modules automatically via the Maven panel
+	    3. In the Maven panel (View > Tool Windows > Maven), you can:
+	       - Expand each module and run its lifecycle goals independently
+	       - Right-click a module > Ignore / Unignore to enable/disable it
+	    4. Each service still has its own independent Spring Boot run configuration
+	-->
+
+</project>

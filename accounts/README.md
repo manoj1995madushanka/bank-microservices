@@ -1,0 +1,1 @@
+To access h2 database follow : http://localhost:8080/h2-console
