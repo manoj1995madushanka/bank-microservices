@@ -1,0 +1,43 @@
+services:
+  accounts:
+    image: manumax95/accounts:s4
+    container_name: accounts
+    ports:
+      - "8081:8081"
+    deploy:
+      resources:
+        limits:
+          memory: 768M
+    networks:
+        - banking-network
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+  loans:
+    image: manumax95/loans:s4
+    container_name: loans
+    ports:
+      - "8090:8090"
+    deploy:
+      resources:
+        limits:
+          memory: 768M
+    networks:
+      - banking-network
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+  cards:
+    image: manumax95/cards:s4
+    container_name: cards
+    ports:
+      - "9000:9000"
+    deploy:
+      resources:
+        limits:
+          memory: 768M
+    networks:
+      - banking-network
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+networks:
+  banking-network:
+    driver: "bridge"
