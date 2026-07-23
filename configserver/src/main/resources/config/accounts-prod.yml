@@ -1,0 +1,11 @@
+build:
+  version: "3.0.0"
+
+accounts:
+  message: "Hello from Accounts"
+  contactDetails:
+    phone: "+1-123-456-7890"
+    email: "accounts@example.com"
+  onCallSupport:
+    - "+1-987-654-3210"
+    - "+1-555-555-5555"
